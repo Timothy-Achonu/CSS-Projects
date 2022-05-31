@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+:root {
+    --primary-bg-color:#ddd;
+    --color-blue:rgba(0, 0, 256, 0.8);
+    --bold-font:bold;
+}
+body {
+    height: 100%;
+}
+
+.main-container {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    /* padding: 40px; */
+}
+
+/* Utility Classes */
+.bold-font {
+    font-weight: var(--bold-font);
+    font-size: 1.2rem;
+}
+
+
+/* Nav Styling */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px 25px;
+    /* flex-wrap: wrap; */
+    width: 100%;
+}
+
+/* Nav left */
+.nav-left {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    /* background-color: red; */
+    height: 130px;
+}
+.nav-left input {
+    background-color: var(--primary-bg-color);
+    width: 93%;
+    border: 1px solid var(--primary-bg-color);
+    border-radius: 14px;
+    height: 1.6rem;
+}
+.nav-left div:nth-child(2) div{
+    display:flex;
+    flex-direction: column;
+    line-height: 1.2rem;
+    text-align: center;
+}
+.nav-left div {
+    /* background-color: gold; */
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+.nav-left span {
+    margin-right: 9px;
+}
+.nav-left div:nth-child(2) {
+   display: flex;
+   justify-content: center;
+   /* flex-direction: column;*/
+   align-items: center;
+   font-weight:var(--bold-font);
+   /* background-color: aqua; */
+}
+
+/* Nav-right */
+.nav-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    /* background-color: rebeccapurple; */
+}
+.nav-right div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    line-height: 2rem;
+}
+.nav-right span {
+    width: 25%;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+.nav-blue a{
+    background-color:var(--color-blue);
+    color: white;
+    width: 30%;
+    text-align: center;
+    border-radius: 29%;
+    margin-top: 40px;
+}
+
+/* Menu Styling */
+menu {
+    display: none;
+    background-color: var(--primary-bg-color);
+    /* height: 1000px; */
+}
+
+
+/* Main Content Styling */
+.main-content {
+    background-color: var(--primary-bg-color) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Projects Styling */
+.your-projects {
+    background-color: var(--primary-bg-color) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.your-projects  .content-section {
+    background-color: white;
+    padding: 30px;
+    margin-top: 20px;
+    border-left: 7px solid rgba(255, 255, 0, 0.61);
+    width: 80%;
+    text-align: center;
+}
+.section-icons {
+    margin-top: 25px;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: gainsboro;
+    width: 70%;
+}
+
+
+/* Announcements Styling */
+.announcements {
+    margin-top: 30px;
+}
+
+.announcements .bold-font {
+    margin: auto;
+    /* background-color: firebrick; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.announcements .content-section {
+    background-color: white;
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+
+}
+hr {
+    margin: auto;
+    width: 80%;
+}
+
+/* Trending */
+.trending {
+    margin-top: 25px;
+    background-color: white;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.trending > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    /* background-color: blue; */
+    padding: 0  20px;
+    margin: 20px 0;
+}
+.trending > div:first-child {
+    text-align: center;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+}
+.trending > div > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    margin-right: 0px;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+ .trending div div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    /* background-color: red; */
+} 
+
+@media (min-width:700px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-areas: 
+        "m m m gt gt gt gt gt gt gt gt gt ";
+
+    }
+
+    menu {
+        display: block;
+        grid-area: m;
+    }
+    .grid-two {
+        grid-area: gt;
+    }
+
+    menu {
+        background-color: var(--color-blue);
+    }
+
+
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: white;
+        padding: 10px 25px;
+        /* flex-wrap: wrap; */
+        width: 100%; 
+    }
+    
+    /* Nav left */
+    .nav-left {
+        margin-top: 0px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width:100%;
+        /* background-color: red; */
+        height: 100px;
+    }
+    .nav-left input {
+        background-color: var(--primary-bg-color);
+        width: 100%;
+        border: 1px solid var(--primary-bg-color);
+        border-radius: 14px;
+        height: 1.6rem;
+    }
+    .nav-left div:nth-child(2) div{
+        display:flex;
+        flex-direction: column;
+        line-height: 1rem;
+        text-align: start;
+    }
+    .nav-left div {
+        /* background-color: gold; */
+        width: 100%;
+        display: flex;
+        /* justify-content: center; */
+    }
+    .nav-left span {
+        margin-right: 9px;
+    }
+    .nav-left div:nth-child(2) {
+       display: flex;
+       justify-content: center;
+       /* flex-direction: column;*/
+       align-items: center;
+       font-weight:var(--bold-font);
+       /* background-color: aqua; */
+    }
+    
+    /* Nav-right */
+    .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 0px;
+        /* background-color: rebeccapurple; */
+    }
+    .nav-right div {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+        line-height: 2rem;
+    }
+    .nav-right span {
+        width: 25%;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+    .nav-blue a{
+        background-color:var(--color-blue);
+        color: white;
+        width: 30%;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 40px;
+    }
+
+}
