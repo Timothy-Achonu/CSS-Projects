@@ -4,12 +4,14 @@
     padding: 0;
 }
 :root {
-    --primary-bg-color:#ddd;
-    --color-blue:rgba(0, 0, 256, 0.8);
+    --primary-bg-color:#e2e8f0;
+    --color-blue:#1992d4;
     --bold-font:bold;
+    --left-border-color:#f0b429;
 }
 body {
     height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .main-container {
@@ -23,6 +25,16 @@ body {
 .bold-font {
     font-weight: var(--bold-font);
     font-size: 1.2rem;
+}
+
+.bg-yellow {
+ background-color: var(--left-border-color);
+ width: 100px;
+ padding: 15px;
+ border-radius: 50px;
+ display: flex;
+ justify-content: center;
+ font-weight: var(--bold-font);
 }
 
 
@@ -47,6 +59,8 @@ nav {
     width:100%;
     /* background-color: red; */
     height: 130px;
+    font-weight:var(--bold-font);
+
 }
 .nav-left input {
     background-color: var(--primary-bg-color);
@@ -55,11 +69,21 @@ nav {
     border-radius: 14px;
     height: 1.6rem;
 }
+.nav-left div:nth-child(2) {
+    /* background-color: #1992d4; */
+    margin-top: 25px;
+}
+.nav-left div:nth-child(2) .bg-yellow {
+    width: 95px;
+}
+
 .nav-left div:nth-child(2) div{
     display:flex;
     flex-direction: column;
-    line-height: 1.2rem;
-    text-align: center;
+    /* background-color: red; */
+    height: 100%;
+    justify-content: flex-start;
+    /* text-align: center; */
 }
 .nav-left div {
     /* background-color: gold; */
@@ -73,11 +97,9 @@ nav {
 .nav-left div:nth-child(2) {
    display: flex;
    justify-content: center;
-   /* flex-direction: column;*/
    align-items: center;
-   font-weight:var(--bold-font);
-   /* background-color: aqua; */
 }
+
 
 /* Nav-right */
 .nav-right {
@@ -86,7 +108,7 @@ nav {
     align-items: center;
     width: 100%;
     margin-top: 40px;
-    /* background-color: rebeccapurple; */
+    /* background-color: red; */
 }
 .nav-right div {
     display: flex;
@@ -95,9 +117,23 @@ nav {
     padding: 0 20px;
     line-height: 2rem;
 }
-.nav-right span {
-    width: 25%;
+.nav-right div:first-of-type {
+    /* background-color: yellow; */
+    justify-content: space-evenly;
+
+}
+.nav-right div:first-of-type span:nth-child(3) {
+    /* background-color: gray; */
+    margin-top: 15px;
     text-align: center;
+}
+.nav-right div:first-of-type span:nth-child(1) {
+    /* background-color: gray; */
+    margin-top: 15px;
+}
+.nav-right span.bg-yellow {
+    width: 95px;
+    /* background-color: #1992d4; */
 }
 a {
     text-decoration: none;
@@ -136,11 +172,11 @@ menu {
     align-items: center;
     padding: 20px;
 }
-.your-projects  .content-section {
+.content-section {
     background-color: white;
     padding: 30px;
     margin-top: 20px;
-    border-left: 7px solid rgba(255, 255, 0, 0.61);
+    border-left: 7px solid var(--left-border-color);
     width: 80%;
     text-align: center;
 }
@@ -159,15 +195,16 @@ menu {
     margin-top: 30px;
 }
 
-.announcements .bold-font {
+.announcement.bold-font {
     margin: auto;
     /* background-color: firebrick; */
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    margin-bottom: 10px;
 }
 
 
-.announcements .content-section {
+ .announce-section {
     background-color: white;
     width: 80%;
     padding: 20px;
@@ -182,41 +219,49 @@ hr {
 
 /* Trending */
 .trending {
-    margin-top: 25px;
+    /* margin: auto; */
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.bold-font.trending {
+    text-align: center;
+}
+.trending-section {
+    margin-top: 15px;
     background-color: white;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
 }
 
-.trending > div {
+.trending-section > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     margin: auto;
     /* background-color: blue; */
     padding: 0  20px;
     margin: 20px 0;
 }
-.trending > div:first-child {
+.trending-section > div:first-child {
     text-align: center;
     /* background-color: orange; */
     display: flex;
     justify-content: center;
 }
-.trending > div > span {
+.trending-section > div > span {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: yellow;
-    margin-right: 0px;
+    margin-right: 17px;
     padding: 20px;
     border-radius: 50%;
 }
 
- .trending div div:nth-child(2){
+ .trending-section div div:nth-child(2){
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -227,10 +272,20 @@ hr {
 
 @media (min-width:700px) {
     .grid-container {
+        width: 100%;
+        background-color: var(--primary-bg-color);
         display: grid;
-        grid-template-columns: repeat(12,1fr);
+        grid-template-columns:repeat(12,1fr);
+        grid-template-rows: 200px auto;
+        /* if the grid-two container wont let me style 
+           the grid-container how then, will I style the
+           nav and main-content? I would have to put the nav and 
+           main-content inside a grid container to style them 
+           in the grid layout style.
+        */
         grid-template-areas: 
-        "m m m gt gt gt gt gt gt gt gt gt ";
+        "m m m n n n n n n n n n"
+        "m m m mc mc mc mc mc mc mc mc mc";
 
     }
 
@@ -238,15 +293,48 @@ hr {
         display: block;
         grid-area: m;
     }
-    .grid-two {
-        grid-area: gt;
+    .main-content {
+        grid-area: mc;
+    }
+    nav {
+        grid-area: n;
     }
 
+
+
+    /* Menu Styling */
     menu {
+        padding: 20px;
         background-color: var(--color-blue);
+        /* color: white; */
     }
-
-
+    .menu-heading {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .menu-heading span {
+        margin-right: 7px;
+        /* background-color: white; */
+    }
+    .other-pages div {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    .other-pages div span {
+        margin-right: 7px;
+        /* background-color: white; */
+        /* color: white; */
+    }
+    .other-pages .settings {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 80px;
+        /* padding-top: 30px; */
+    }
 
     nav {
         display: flex;
@@ -332,4 +420,283 @@ hr {
         margin-top: 40px;
     }
 
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        margin: 20px;
+        /*grid-template-rows:70px 350px 350px; */
+        column-gap: 20px;
+        /* grid-template-areas: 
+        "p p" "one two"; */
+    }
+
+    .projects {
+        grid-column: 1/-1;
+        grid-row: 1/2; 
+        /* grid-area: p; */
+        display: flex;
+        align-items: center;
+        margin: 20px 10px;
+        margin-bottom: 0px;
+        /* background-color: red; */
+    }
+
+    /* .announcements {
+        grid-column: 1/-1;
+    } */
+    /* .one {
+        grid-area: one;
+    }
+    .two {
+        grid-area: two;
+    }
+    .three {
+        grid-area: three;
+    } */
+
+
+    .main-content {
+        background-color: var(--primary-bg-color);
+        padding: 0;
+    }
+    
+    /* Projects Styling */
+    .your-projects {
+        background-color: var(--primary-bg-color);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+    }
+    .content-section {
+        background-color: white;
+        padding: 30px;
+        margin-top: 20px;
+        border-left: 7px solid var(--left-border-color);
+        width: fit-content;
+        text-align: center;
+    }
+    .section-icons {
+        margin-top: 25px;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-around;
+        background-color: gainsboro;
+        width: 70%;
+    }
+    
+    
+    /* Announcements Styling */
+    .announcements {
+        margin-top: 30px;
+    }
+    
+    .announcement.bold-font {
+        margin: auto;
+        /* background-color: firebrick; */
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 10px;
+    }
+    
+    
+     .announce-section {
+        background-color: white;
+        width: 80%;
+        padding: 20px;
+        margin: auto;
+        text-align: center;
+    
+    }
+    hr {
+        margin: auto;
+        width: 80%;
+    }
+    
+    /* Trending */
+
+    .trending {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .bold-font.trending {
+        text-align: center;
+    }
+    .trending-section {
+        margin-top: 15px;
+        background-color: white;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .trending-section > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        /* background-color: blue; */
+        padding: 0  20px;
+        margin: 20px 0;
+    }
+    .trending-section > div:first-child {
+        text-align: center;
+        /* background-color: orange; */
+        display: flex;
+        justify-content: center;
+    }
+    .trending-section > div > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: yellow;
+        margin-right: 17px;
+        padding: 20px;
+        border-radius: 50%;
+    }
+    
+     .trending-section div div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        /* background-color: red; */
+    } 
+
+}
+
+
+@media (min-width:1400px) {
+    .grid-container {
+        width: 100%;
+        background-color: var(--primary-bg-color);
+        display: grid;
+        grid-template-columns:repeat(20,1fr);
+        grid-template-rows: 200px auto;
+        /* if the grid-two container wont let me style 
+           the grid-container how then, will I style the
+           nav and main-content? I would have to put the nav and 
+           main-content inside a grid container to style them 
+           in the grid layout style.
+        */
+        grid-template-areas: 
+        "m m n n n n n n n n n n n n n n n n n n"
+        "m m mc mc mc mc mc mc mc mc mc mc mc mc mc mc mc mc mc mc";
+
+    }
+
+    menu {
+        display: block;
+        grid-area: m;
+    }
+    .main-content {
+        grid-area: mc;
+    }
+    nav {
+        grid-area: n;
+    }
+
+    /* .announce-section {
+        background-color: red;
+    } */
+    
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(20,1fr);
+        width: 100%;
+        /* background-color: blue; */
+        padding: 0 20px;
+        margin: 10px;
+        margin: 0px;
+        grid-template-rows:
+        20px 350px 150px 200px 350px;
+        column-gap: 20px;
+        row-gap: 20px;
+        grid-template-areas: 
+        "p p p p p p p p p p p p p p a a a a a a" 
+        "o o o o o o o t t t t t t t a a a a a a"
+        "h h h h h h h f f f f f f f a a a a a a"
+        "h h h h h h h f f f f f f f r r r r r r"
+        "i i i i i i i s s s s s s s r r r r r r " ;
+        
+        /* grid-template-areas: 
+        "p p p p p p p p p p p p p p a a a a a a" 
+        "o o o o o o o t t t t t t t a a a a a a"
+        "h h h h h h h f f f f f f f a a a a a a"
+        "h h h h h h h f f f f f f f a a a a a a"
+        "i i i i i i i s s s s s s s r r r r r r " ; */
+    }
+
+    .projects {
+        /* grid-column: 1/-1;  */
+        grid-row: 1/2; 
+        grid-area: p;
+        display: flex;
+        align-items: center;
+        margin: 20px 10px;
+        margin-bottom: 0px;
+        height: 100%;
+        width: 100%;
+    }
+
+
+     .one {
+        grid-area: o;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .two {
+        grid-area: t;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .three {
+        grid-area: h;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    } 
+    .four {
+        grid-area: f;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+
+    } 
+    .five {
+        grid-area: i;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+
+    } 
+    .six {
+        grid-area: s;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    } 
+
+    .announcements {
+        grid-area: a;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    } 
+
+    .trending {
+       grid-area: r;
+       margin: 0;
+       height: 100%;
+       /* width: 100%; */
+    }
+
+
+    
 }
