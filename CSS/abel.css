@@ -1,0 +1,26 @@
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+nav > div:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+nav > div:nth-child(2) {
+    display: flex;
+    /* border: 1px solid red; */
+    font-weight: bold;
+    width:300px;
+    justify-content:space-between;
+}
+
+
