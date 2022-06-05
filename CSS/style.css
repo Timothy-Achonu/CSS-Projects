@@ -29,8 +29,10 @@ body {
 
 .bg-yellow {
  background-color: var(--left-border-color);
- width: 100px;
+ width: 95px !important;
+ height: 95px !important;
  padding: 15px;
+ /* background-color: red !important; */
  border-radius: 50px;
  display: flex;
  justify-content: center;
@@ -74,7 +76,7 @@ nav {
     margin-top: 25px;
 }
 .nav-left div:nth-child(2) .bg-yellow {
-    width: 100px;
+    width: 95px;
 }
 
 .nav-left div:nth-child(2) div{
@@ -340,6 +342,9 @@ hr {
     }
     .main-content {
         grid-area: mc;
+    }
+    menu img {
+        width: 20px;
     }
     nav {
         grid-area: n;

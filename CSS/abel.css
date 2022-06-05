@@ -22,5 +22,15 @@ nav > div:nth-child(2) {
     width:300px;
     justify-content:space-between;
 }
-
+button {
+    margin: auto;
+    margin-top: 400px;
+    margin-bottom: 70px;
+    padding: 10px;
+    width: 59px;
+    /* font-weight: bold; */
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+}
 
