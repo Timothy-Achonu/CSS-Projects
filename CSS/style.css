@@ -162,8 +162,8 @@ menu {
     padding: 20px;
     background-color: var(--color-blue);
     /* color: white; */
-    /* transition-property: display; */
-    transition-duration: 5000ms;
+    /* transition-property: opacity; */
+    /* transition-duration: 5000ms; */
 }
 .menu-heading {
     margin-bottom: 40px;
@@ -211,9 +211,11 @@ menu.menu-show {
     flex-direction: column;
     width: 145px;
     position: absolute;
+    /* left: 50px; */
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.4);
     /* transition-property: display; */
-    transition-duration: 500ms;
+    /* transition-duration: 500ms; */
+    animation-name: slideIn;
 }
 
 
