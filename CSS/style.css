@@ -52,11 +52,7 @@ nav {
     width: 100%;
 }
 
-.hamburger {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
+
 
 /* Nav left */
 .nav-left {
@@ -166,6 +162,8 @@ menu {
     padding: 20px;
     background-color: var(--color-blue);
     /* color: white; */
+    /* transition-property: display; */
+    transition-duration: 5000ms;
 }
 .menu-heading {
     margin-bottom: 40px;
@@ -202,11 +200,20 @@ menu {
     /* background-color: var(--primary-bg-color); */
     /* height: 1000px; */
 }
-menu {
+.hamburger {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* background-color: #1992d4; */
+}
+menu.menu-show {
     display: flex;
     flex-direction: column;
     width: 145px;
     position: absolute;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.4);
+    /* transition-property: display; */
+    transition-duration: 500ms;
 }
 
 
