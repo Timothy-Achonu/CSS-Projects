@@ -173,12 +173,12 @@ a {
         padding: 20px;
         background-color: var(--color-blue);
         /* color: white; */
-        /* transition-property: opacity; */
-        /* transition-duration: 5000ms; */
-        animation-name: comeIn;
+        /* transition: all 5000ms; */
+        animation-name: slideIn;
         animation-duration: 500ms;
+        display: none;
     }
-    @keyframes comeIn {
+    @keyframes slideIn {
         0% {
             opacity: 0;
         }
@@ -186,12 +186,24 @@ a {
             opacity: 1;
         }
     }
+     /* Menu styling when hamburger is clicked */
+     .menu-wrap > .toggler:checked + .hamburger + menu{
+        display: flex;
+        flex-direction: column;
+        width: 175px;
+        height: 70vh;
+        position: absolute;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /* left: 50px; */
+        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.4);
+        /* transition-property: display; */
+    }
+
     menu img {
         width: 20px;
     }
-    menu {
-        display: none;
-    }
+    
 
     /* Hamburger Menu styling */
     .menu-wrap {
@@ -279,32 +291,7 @@ a {
         left: 178px;
     }
     
-    /* Menu styling when hamburger is clicked */
-    .menu-wrap > .toggler:checked + .hamburger + menu{
-        display: flex;
-        flex-direction: column;
-        width: 175px;
-        height: 70vh;
-        position: absolute;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        /* left: 50px; */
-        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.4);
-        /* transition-property: display; */
-        /* transition-duration: 500ms; */
-        animation-name: slideIn;
-        animation-duration: 500ms;
-        animation-timing-function: ease-in-out;
-    }
-
-    @keyframes slideIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
+   
 
     /* More menu styling */
     .menu-heading {
@@ -963,8 +950,7 @@ hr {
 
     
 
-
-    
-
-    
+}
+* {
+    border: 1px solid red;
 }
