@@ -858,7 +858,7 @@ hr {
         /* background-color: orange; */
         display: flex;
         justify-content: center;
-        margin-top: 0 !important;
+        margin-top: 10px !important;
     }
     .trending-section > div > span {
         display: flex;
