@@ -564,13 +564,23 @@ hr {
         background-color: inherit !important;
     }
 
-
+    .grid-container {
+        /* height: 100%; */
+        /* background-color: rebeccapurple; */
+    }
     /* Menu Styling */
+    menu {
+        height: 378.7vh !important;
+        /* opacity: 0; */
+        background-color: #1992d4 !important;
+    }
+    
     menu {
         padding: 20px;
         background-color: var(--color-blue);
         /* color: white; */
         width: 160px;
+        min-height:100% !important;
     }
     .menu-wrap > .toggler , .menu-wrap > .big-toggler {
         display: none;
