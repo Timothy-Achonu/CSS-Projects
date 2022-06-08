@@ -570,7 +570,7 @@ hr {
     }
     /* Menu Styling */
     menu {
-        height: 378.7vh !important;
+        /* height: 378.7vh !important; */
         /* opacity: 0; */
         background-color: #1992d4 !important;
     }
